@@ -7,6 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/vue-todo-app/',
   plugins: [
     vue(),
     vueJsx(),
@@ -17,5 +18,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  base: '/vue-todo-app/',
 })
