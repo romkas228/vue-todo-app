@@ -1,0 +1,37 @@
+<script setup lang="ts">
+import type { FIlterType } from '../types/FilterType';
+
+const { modelValue } = defineProps<{ modelValue: String }>();
+const emit = defineEmits(['update:modelValue']);
+</script>
+
+<template>
+  <nav class="filter">
+    <a
+      href="#/"
+      class="filter__link"
+      :class="{ selected: modelValue === 'all' }"
+      @click="emit('update:modelValue', 'all')"
+    >
+      All
+    </a>
+
+    <a
+      href="#/active"
+      class="filter__link"
+      :class="{ selected: modelValue === 'active' }"
+      @click.prevent="emit('update:modelValue', 'active')"
+    >
+      Active
+    </a>
+
+    <a
+      href="#/completed"
+      class="filter__link"
+      :class="{ selected: modelValue === 'completed' }"
+      @click.prevent="emit('update:modelValue', 'completed')"
+    >
+      Completed
+    </a>
+  </nav>
+</template>
