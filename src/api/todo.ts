@@ -1,4 +1,3 @@
-import { todos } from "../data/todos";
 import { Todo } from "../types/Todo";
 import { client } from "../utils/http";
 
